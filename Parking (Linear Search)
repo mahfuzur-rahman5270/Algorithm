@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+    int a,b,c,i,j,max,min;
+    while(scanf("%d",&a)==1)
+    {
+        for(i=1; i<=a; i++)
+        {
+            scanf("%d",&b);
+            max=0,min=100;
+            for(j=1; j<=b; j++)
+            {
+                scanf("%d",&a);
+                if(max<c)
+                    max=c;
+                if(min>c)
+                    min=c;
+            }
+            printf("%d\n",(max-min)*2);
+        }
+    }
+    return 0;
+}
