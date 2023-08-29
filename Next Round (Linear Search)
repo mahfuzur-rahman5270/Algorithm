@@ -1,0 +1,64 @@
+#include <stdio.h>
+int main()
+{
+    int a, b;
+    scanf("%d %d", &a, &b);
+
+    int c[100];  // Assuming a maximum of 100 elements in the array
+    for (int i = 0; i < a; i++)
+    {
+        scanf("%d", &c[i]);
+    }
+
+    int countB = 0;
+    for (int i = 0; i < a; i++)
+    {
+        if (c[i] == b)
+        {
+            countB++;
+        }
+    }
+
+    if (countB != 0)
+    {
+        if (countB == a)
+        {
+            printf("%d\n", a);
+        }
+        else
+        {
+            int cc[100];  // Assuming a maximum of 100 elements in cc
+            for (int i = 0; i < a; i++)
+            {
+                cc[i] = c[i];
+                if (c[i] == b)
+                {
+                    break;
+                }
+            }
+            printf("%d\n", countB);
+        }
+    }
+    else
+    {
+        int allSame = 1;
+        for (int i = 1; i < a; i++)
+        {
+            if (c[i] != c[0])
+            {
+                allSame = 0;
+                break;
+            }
+        }
+        if (allSame && c[0] != 0)
+        {
+            printf("%d\n", a);
+        }
+        else
+        {
+            printf("0\n");
+        }
+    }
+
+    return 0;
+}
