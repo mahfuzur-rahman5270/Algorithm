@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+    int x, y, speed, max, i, j;
+    while(scanf("%d",&x)==1)
+    {
+        for(i=1; i<=x; i++)
+        {
+            max=0;
+            scanf("%d",&y);
+            for(j=1; j<=y; j++)
+            {
+                scanf("%d",&speed);
+                if(speed>max)
+                    max=speed;
+            }
+            printf("Case %d: %d\n",i,max);
+        }
+    }
+    return 0;
+}
