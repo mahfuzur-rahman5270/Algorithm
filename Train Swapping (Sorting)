@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+ int cari[52], n, T, count, i, j, flag, temp;
+ scanf("%d", &T);
+ while(T--)
+ {
+ scanf("%d", &n);
+ count = 0;
+ for(i=0; i<n; ++i) scanf("%d", &cari[i]);
+ for(i=0; i<n-1; i++)
+ {
+ flag = 1;
+ for(j=0; j<n-1-i; ++j)
+ {
+ if(cari[j] > cari[j+1])
+ {
+ flag = 0;
+ temp = cari[j], cari[j] = cari[j+1], cari[j+1] = temp;
+ count++;
+ }
+ }
+ if(flag) break;
+ }
+ printf("Optimal train swapping takes %d swaps.\n", count);
+ count = 0;
+ }
+ return 0;
+}
